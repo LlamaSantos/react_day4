@@ -3,9 +3,12 @@ module.exports = {
   output: {
     filename: "public/bundle.js"
   },
+  externals: {
+    'firebase' : 'Firebase',
+  },
   module: {
     loaders: [
-      {test: /\.js$/, loader: 'jsx-loader'}
+      { test: /\.js$/, exclude: /node_modules/, loader: 'babel-loader?experimental&optional=runtime' }
     ]
   }
 };

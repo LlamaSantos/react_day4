@@ -1,11 +1,11 @@
-var React = require('react');
-var Home = require('./Home');
-var Router = require('react-router');
-var RouteHandler = Router.RouteHandler;
-var SearchGithub = require('./SearchGithub');
+import React from 'react';
+import Home from './Home';
+import Router from 'react-router';
+import SearchGithub from './SearchGithub';
+let { RouteHandler } = Router;
 
-var Main = React.createClass({
-  render: function(){
+export default React.createClass({
+  render() {
     return (
       <div className="main-container">
         <nav className="navbar navbar-default" role="navigation">
@@ -17,8 +17,6 @@ var Main = React.createClass({
           <RouteHandler />
         </div>
       </div>
-    )
+    );
   }
 });
-
-module.exports = Main;

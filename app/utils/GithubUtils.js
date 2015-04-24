@@ -1,19 +1,20 @@
-var appConstants = require('../constants/appConstants');
-var axios = require('axios');
+import axios from 'axios';
+import {
+    GITHUB_CLIENT_ID,
+    GITHUB_CLIENT_SECRET,
+  } from '../constants';
 
-var id = "YOUR_CLIENT_ID_HERE";
-var sec = "YOUR_SECRET_ID_HERE";
-var param = "?client_id=" + id + "&client_secret=" + sec;
+let param = `?client_id=${GITHUB_CLIENT_ID}&client_secret=${GITHUB_CLIENT_SECRET}`;
 
-var githubUtils = {
+let githubUtils = {
   getBio: function(username){
-    var url = "https://api.github.com/users/" + username + param;
+    let url = `https://api.github.com/users/${username}${param}`;
     return axios.get(url);
   },
   getRepos: function(username){
-    var url = "https://api.github.com/users/" + username + "/repos" + param;
+    let url = `https://api.github.com/users/${username}/repos${param}`;
     return axios.get(url);
   }
 };
 
-module.exports = githubUtils;
+export default githubUtils;

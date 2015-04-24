@@ -1,9 +1,9 @@
-var Firebase = require('firebase');
-var appConstants = require('../constants/appConstants');
+import Firebase from 'firebase';
+import { FIREBASE_URL } from '../constants/';
 
-var firebaseUtils = {
+let firebaseUtils = {
   homeInstance: function(){
-    return new Firebase(appConstants.FIREBASE_HOST);
+    return new Firebase(FIREBASE_URL);
   },
   addNote: function(noteObj){
     this.homeInstance().child(noteObj.user).push(noteObj.note);
@@ -17,4 +17,4 @@ var firebaseUtils = {
   }
 };
 
-module.exports = firebaseUtils;
+export default firebaseUtils;

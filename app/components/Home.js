@@ -1,8 +1,8 @@
-var React = require('react');
-var githubActions = require('../actions/githubActions');
-var SearchGithub = require('./SearchGithub');
+import React from 'react';
+import githubActions from '../actions/githubActions';
+import SearchGithub from './SearchGithub';
 
-var Home = React.createClass({
+export default React.createClass({
   render: function(){
     return (
       <h2 className="text-center">
@@ -11,5 +11,3 @@ var Home = React.createClass({
     )
   }
 });
-
-module.exports = Home;

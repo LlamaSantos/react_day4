@@ -1,17 +1,17 @@
-var React = require('react');
-var Router = require('react-router');
-var notesStore = require('../stores/notesStore');
+import React from 'react';
+import Router from 'react-router';
+import notesStore from '../stores/notesStore';
 
-/*
-var Left = require('../components/Github/Left');
-var Middle = require('../components/Github/Middle');
-var Notes = require('../components/Notes/Notes');
-*/
-var Profile = React.createClass({
+import Left from '../components/Github/Left';
+import Middle from '../components/Github/Middle';
+import Notes from '../components/Notes/Notes';
+
+export default React.createClass({
   mixins: [ Router.State ],
-  render: function(){
-    /*
-    var username = this.getParams().username;
+
+  render() {
+    let username = this.getParams().username;
+
     return (
       <div className="row">
         <div className="col-md-4">
@@ -24,9 +24,6 @@ var Profile = React.createClass({
           <Notes username={username}/>
         </div>
       </div>
-    )
-    */
+    );
   }
 });
-
-module.exports = Profile;
